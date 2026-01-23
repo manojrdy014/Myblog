@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manoj Reddy | ADS – Interactive Intro Blog</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1e293b, var(--bg));
+      color: var(--text);
+    }
+
+    /* Floating Navbar */
+    nav {
+      position: sticky;
+      top: 15px;
+      margin: 15px auto;
+      max-width: 900px;
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 10px;
+      z-index: 1000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 4px solid lightblue;
+      border-top: groove;
+      border-bottom: groove;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 0 40px var(--accent-soft);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin: 10px 0;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Layout */
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px 80px;
+      display: grid;
+      gap: 30px;
+    }
+
+    /* Glass Cards */
+    section {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #c7d2fe;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Accordion */
+    .accordion button {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      text-align: left;
+      font-size: 1.05rem;
+      padding: 12px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: var(--muted);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 170px;
+      border-radius: 14px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--muted);
+    }
+
+    /* Floating Scroll Hint */
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      animation: bounce 2s infinite;
+      color: var(--muted);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(8px); }
+      60% { transform: translateY(4px); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#interests">Interests</a>
+    <a href="#goals">Goals</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <header id="about">
+    <div>
+      <img src="profile.jpg" alt="Manoj Reddy" />
+      <h1>Manoj Reddy</h1>
+      <p>Algorithms & Data Structures · Week 1 Introduction</p>
+      <p><strong>Pronunciation:</strong> Muh-noj Reh-dee</p>
+      <div class="scroll-down">⬇ Scroll</div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="experience">
+      <h2>💼 Role & Experience</h2>
+      <div class="accordion">
+        <button onclick="toggleAccordion(this)">Recent Job Title <span>+</span></button>
+        <div class="accordion-content">
+          <p><strong>Full-Stack Web Developer Intern</strong> at <strong>Prodigy Infotech</strong>.</p>
+        </div>
+
+        <button onclick="toggleAccordion(this)">Summary of Job Responsibilities <span>+</span></button>
+        <div class="accordion-content">
+          <ul>
+            <li>Designed and implemented responsive web applications</li>
+            <li>Collaborated with teams on front-end and back-end technologies</li>
+            <li>Practiced debugging and troubleshooting techniques</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <h2>🎯 Hobbies & Interests</h2>
+      <ul>
+        <li>Playing volleyball</li>
+        <li>Exploring new technologies</li>
+        <li>Travelling around and discovering new places</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🎓 Major & Motivation</h2>
+      <p>
+        I am pursuing this degree to further my passion for technology and to make meaningful
+        contributions to the field. I chose this course to strengthen my technical foundations
+        and gain a deeper understanding of core Computer Science concepts.
+      </p>
+    </section>
+
+    <section id="goals">
+      <h2>🚀 Future Goals</h2>
+      <p>
+        I aim to become a software engineer, applying strong algorithmic thinking to build
+        reliable, high-performance applications and systems.
+      </p>
+    </section>
+
+    <section id="gallery">
+      <h2>📸 Life Beyond Code</h2>
+      <div class="gallery">
+        <img src="hobby1.jpg" alt="Hobby" />
+        <img src="place1.jpg" alt="Favorite place" />
+        <img src="tech.jpg" alt="Technology" />
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Manoj Reddy · Algorithms & Data Structures
+  </footer>
+
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const span = button.querySelector('span');
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        span.textContent = '+';
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        span.textContent = '–';
+      }
+    }
+  </script>
+
+</body>
+</html>
