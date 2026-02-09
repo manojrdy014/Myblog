@@ -188,6 +188,21 @@
       40% { transform: translateY(8px); }
       60% { transform: translateY(4px); }
     }
+
+  /* Code Snippet Styling */
+  .code-snippet {
+    display: block;
+    background: rgba(99, 102, 241, 0.1);
+    color: #e0e7ff;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    overflow-x: auto;
+    margin: 12px 0;
+  }
+
+
   </style>
 </head>
 <body>
@@ -265,6 +280,103 @@
         <img src="tech.jpg" alt="Technology" />
       </div>
     </section>
+<section id="week3">
+  <h2>📝 Week-3 Algorithmic Analysis</h2>
+  <p><strong>Big O Notation: My Journey to Understanding Algorithm Efficiency</strong></p>
+
+  <p><strong>Introduction: Why DS&A Felt Hard at First (and Why It Matters)</strong></p>
+  <p>
+    When I first started learning Data Structures and Algorithms (DS&A), I thought programming was mainly about making code work correctly. 
+    If the output was right, I assumed the solution was good enough. But soon, I realized something important: not all correct solutions are efficient.
+  </p>
+  <p>
+    That’s when I encountered Big O notation—a concept that completely changed how I think about coding. At first, it felt abstract and mathematical, 
+    but over time, I began to see why universities like Lewis University make DS&A a required course. Big O notation helps us understand how 
+    algorithms perform as data grows, which is essential in real-world software development.
+  </p>
+  <p>
+    In this post, I’ll explain Big O notation in a simple way, share examples, and reflect on my learning experience with DS&A.
+  </p>
+
+  <h3>What Is Big O Notation?</h3>
+  <p>
+    Big O notation describes how fast an algorithm grows in terms of time or memory when the input size increases. Instead of asking how fast 
+    a program runs on a specific computer, Big O focuses on how the algorithm behaves as the input becomes very large.
+  </p>
+
+  <h3>Visualizing Big O Growth Rates:</h3>
+  <ul>
+    <li>O(1) - Constant Time</li>
+    <li>O(log n) - Logarithmic Time</li>
+    <li>O(n) - Linear Time</li>
+    <li>O(n log n) - Linearithmic Time</li>
+    <li>O(n^2) - Quadratic Time</li>
+  </ul>
+
+  <h3>Example 1: Linear Search – O(n)</h3>
+  <p>A linear search checks each element one by one until it finds the target value.</p>
+  <pre class="code-snippet">
+def linear_search(arr, target):
+    for x in arr:
+        if x == target:
+            return True
+    return False
+  </pre>
+  <p>If the list has n elements, the algorithm may check all n elements in the worst case.</p>
+
+  <h3>Example 2: Binary Search – O(log n)</h3>
+  <p>Binary search works on sorted data and repeatedly divides the search space in half, making it much faster for large datasets.</p>
+  <pre class="code-snippet">
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return True
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return False
+  </pre>
+
+  <h3>Why Big O Notation Is Important?</h3>
+  <ol>
+    <li><strong>Real-World Applications 🌍</strong><br>
+        Big O impacts:
+        <ul>
+          <li>Search engines (fast search results)</li>
+          <li>Databases (query performance)</li>
+          <li>Social media (recommendation systems)</li>
+          <li>Mobile apps (smooth user experience)</li>
+        </ul>
+    </li>
+    <li><strong>Better Decision-Making</strong><br>
+        Two algorithms may solve the same problem, but Big O helps us choose the better one.
+    </li>
+    <li><strong>Interview and Career Relevance 💼</strong><br>
+        Many technical interviews focus on algorithm efficiency, not just correctness.
+    </li>
+  </ol>
+
+  <h3>Best Practices and Common Mistakes</h3>
+  <p>
+    Best practices include analyzing both time and space complexity and comparing multiple solutions. Common mistakes include ignoring efficiency 
+    and misunderstanding Big O as exact execution time.
+  </p>
+
+  <h3>Personal Reflection</h3>
+  <p>
+    Learning DS&A was challenging at first, but it significantly improved my problem-solving skills. Big O notation helped me think more deeply 
+    about algorithms and write more efficient code. I now see DS&A as a foundational skill for any computer science career.
+  </p>
+
+  <h3>Conclusion</h3>
+  <p>
+    Big O notation is a powerful tool that helps us understand algorithm efficiency and scalability. Mastering this concept is essential for becoming 
+    a better programmer and problem solver.
+  </p>
+</section>
 
   </main>
 
