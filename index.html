@@ -215,6 +215,7 @@
     <a href="#gallery">Gallery</a>
     <a href="#week3">Week 3</a>
     <a href="#week5">Week 5</a>
+    <a href="#week8">Week 8</a>
   </nav>
 
   <header id="about">
@@ -481,7 +482,22 @@ basis. It instead pre-allocates additional space, which minimises the number of 
     <p>This task has greatly enriched my knowledge on dynamic array. The one-manual implementation of resizing converted the idea into a practical process that has memory allocation and copying expenses.</p>
     <p>When describing dynamic arrays to an unprocessed user, I would describe them as a larger notebook: once you run out of pages, you get another larger notebook and transfer your notes to it. This replication is time-consuming though the frequency of this replication is low and therefore the average cost remains low.</p>
     <p>Overall, this practical use case cemented the importance of dynamic arrays as a potent and commonly used data structure- and why the realization of everything that goes on behind the scenes is important to create an efficient code.</p>
+</section>
 
+    <section id="week8">
+  <h2>📝 Week-8 Linked Lists</h2>
+  <h4>Understanding Linked Lists:</h4>
+  <p>Linked lists have many differences with arrays in terms of data storage and data management. Whereas arrays occupy consecutive memory addresses, a linked list comprises of nodes which are linked by pointers and therefore dynamic memory allocation is made possible. This increases the flexibility of linked lists, particularly
+  where list insertions and removals have to be done frequently, since this can be efficiently done without changing the position of the elements. Contrary to this, arrays offer quick random access hence they are more suitable when indexing is necessary. I would prefer a linked list to an array in situations where the ability 
+  to expand and update the array is of greater significance than directly accessing the data.</p>
+  <h4>Implementation Challenges:</h4>
+  <p>I used singly and doubly linked lists in this assignment. A singly linked list merely has a pointer to the following node and as such is memory-efficient but restricted to exploration (only forward). Instead, a doubly linked list has both a next and a previous pointer and can be traversed along a direction, and can also be
+    deleted easily. Such an added capability however would be at the expense of increased memory consumption and a little more complicated implementation. Among the main changes that I have done was the introduction of the add last technique in O 1 time that utilized a tail pointer that does not involve the whole list.</p>
+  <h4>Personal Reflection:</h4>
+  <p>The hardest aspect of this exercise was keeping the correct pointer updates in particular in the edge cases like empty list or removing of the last node. To keep the add last() function in constant time, it was designed carefully especially in updating the tail reference. With this practical application, 
+    I was able to better understand the internal operations of linked lists and the influence of pointer manipulation on performance. One way of explaining linked lists to a beginner is that they are a chain of connected items, where one item points to the next and therefore is flexible but needs intricate 
+    navigation as opposed to arrays.</p>
+</section>
 
 
 
